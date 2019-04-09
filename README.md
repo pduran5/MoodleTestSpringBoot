@@ -14,20 +14,20 @@ Conversor de formato propio a Moodle Gift realizado con Spring Boot.
 5. En el Paso 3, se puede descargar el fichero .gift para importar al Moodle, así como el .html del test y el .html del solucionario.
 
 ## Separación de preguntas
-Al final de cada pregunta se añade una línea que contiene **-----** (también al final del test).
+Al final de cada pregunta se añade una línea que contiene ```-----``` (también al final del test).
 
 ## Imágenes
-Para incluir una imagen en el enunciado en el test, la línea comienza por **###** seguido del nombre del fichero de imagen. P.ej. ###imagen.png
+Para incluir una imagen en el enunciado en el test, la línea comienza por ```###``` seguido del nombre del fichero de imagen. P.ej. ```###imagen.png```
 
 ## Respuestas
-Las respuestas correctas se marcan al inicio con un **+** y las incorrectas con un **-**
+Las respuestas correctas se marcan al inicio con un ```+``` y las incorrectas con un ```-```
 
 ## Preguntas fill in the blank
-En el enunciado, indicar el blank con 5 guiones bajos y entre corchetes las diferentes soluciones posibles (separadas por #): **_____[Opcion1#Opcion2#Opcion3]**
+En el enunciado, indicar el blank con 5 guiones bajos y entre corchetes las diferentes soluciones posibles (separadas por #): ```_____[Opcion1#Opcion2#Opcion3]```
 
 ## Preguntas matching
-- Cada línea de la respuesta: *Respuesta visible->Opción correcta en desplegable
-- Se pueden añadir opciones incorrectas en el desplegable: *->Opción incorrecta en desplegable
+- Cada línea de la respuesta: ```*Respuesta visible->Opción correcta en desplegable```
+- Se pueden añadir opciones incorrectas en el desplegable: ```*->Opción incorrecta en desplegable```
 
 ## Ejemplo de test de entrada
 
