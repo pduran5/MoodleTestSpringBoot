@@ -1,10 +1,17 @@
 # MoodleTestSpringBoot
 
-Conversor de formato propio a Moodle Gift.
+Conversor de formato propio a Moodle Gift realizado con Spring Boot.
 
 **Ventajas:**
 - Incrusta las imágenes en el fichero Gift que se importará al Moodle
 - Realiza el cálculo automático de los %s de respuestas correctas e incorrectas
+
+## Instrucciones
+1. Ejecutar con: ```java -jar moodletest.jar``` y abrir navegador en http://localhost:8080
+2. Crear un fichero .zip con el test llamado test.txt y todas las imágenes que contienen el test (no poner en ninguna subcarpeta).
+3. En el Paso 1, subir el fichero que contiene el test y las imágenes (test.zip) a la web.
+4. En el Paso 2, si se quiere generar un html con el tipo test y el solucionario rellenar el formulario de arriba. Sino, sólo indicar el % de resta de las respuestas incorrectas al final.
+5. En el Paso 3, se puede descargar el fichero .gift para importar al Moodle, así como el .html del test y el .html del solucionario.
 
 ## Separación de preguntas
 Al final de cada pregunta se añade una línea que contiene **-----** (también al final del test).
