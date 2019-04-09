@@ -7,6 +7,6 @@ public class Pregunta {
     public ArrayList<String> linea;
 
     public Pregunta() {
-        linea = new ArrayList<String>();
+        linea = new ArrayList<>();
     }
 }

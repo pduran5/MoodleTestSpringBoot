@@ -88,47 +88,27 @@ public class MoodleTestController {
         ArrayList salidawebsol = new ArrayList<String>();
 
         int numeropregunta = 1;
-
-        salidaweb.add("<html><head>");
-        salidawebsol.add("<html><head>");
-
-        salidaweb.add("<link rel='stylesheet' href='https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css' crossorigin='anonymous'>");
-        salidawebsol.add("<link rel='stylesheet' href='https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css' crossorigin='anonymous'>");
-
-        salidaweb.add("</head><body><div class='container'><table><tbody><tr><td>");
-        salidawebsol.add("</head><body><div class='container'><table><tbody><tr><td>");
-
+        
+        StringBuilder sb = new StringBuilder("<html><head>");
+        sb.append("<link rel='stylesheet' href='https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css' crossorigin='anonymous'>");
+        sb.append("</head><body><div class='container'><table><tbody><tr><td>");
+        
         if(centro.equals("Institut Provençana")) {
-            salidaweb.add("<img width='120px' src='https://pbs.twimg.com/profile_images/934037138160668678/Pru1g-ci_400x400.jpg'/>");
-            salidawebsol.add("<img width='120px' src='https://pbs.twimg.com/profile_images/934037138160668678/Pru1g-ci_400x400.jpg'/>");
+            sb.append("<img width='120px' src='https://pbs.twimg.com/profile_images/934037138160668678/Pru1g-ci_400x400.jpg'/>");
         }
 
-        salidaweb.add("</td><td><b>");
-        salidawebsol.add("</td><td><b>");
+        sb.append("</td><td><b>");
+        sb.append("<p style='margin: 0'>").append(ciclonivel).append(" ").append(ciclonombre).append(".</p>");
+        sb.append("<p style='margin: 0'>").append(modulo).append("</p>");
+        sb.append("<p style='margin: 0'>Professor: ").append(profesor).append("</p>");
+        sb.append("</b></td><td style='width:10%'></td><td><b>");
+        sb.append("<p style='margin: 0'>").append(uf).append("</p>");
+        sb.append("<p style='margin: 0'>").append(prueba).append("</p>");
+        sb.append("<p style='margin: 0'>Data: ").append(fecha).append("</p>");
+        sb.append("</b></td></tr></tbody></table>");
 
-        salidaweb.add("<p style='margin: 0'>" + ciclonivel + " " + ciclonombre + ".</p>");
-        salidawebsol.add("<p style='margin: 0'>" + ciclonivel + " " + ciclonombre + ".</p>");
-
-        salidaweb.add("<p style='margin: 0'>" + modulo + "</p>");
-        salidawebsol.add("<p style='margin: 0'>" + modulo + "</p>");
-
-        salidaweb.add("<p style='margin: 0'>Professor: " + profesor + "</p>");
-        salidawebsol.add("<p style='margin: 0'>Professor: " + profesor + "</p>");
-
-        salidaweb.add("</b></td><td style='width:10%'></td><td><b>");
-        salidawebsol.add("</b></td><td style='width:10%'></td><td><b>");
-
-        salidaweb.add("<p style='margin: 0'>" + uf + "</p>");
-        salidawebsol.add("<p style='margin: 0'>" + uf + "</p>");
-
-        salidaweb.add("<p style='margin: 0'>" + prueba + "</p>");
-        salidawebsol.add("<p style='margin: 0'>" + prueba + "</p>");
-
-        salidaweb.add("<p style='margin: 0'>Data: " + fecha + "</p>");
-        salidawebsol.add("<p style='margin: 0'>Data: " + fecha + "</p>");
-
-        salidaweb.add("</b></td></tr></tbody></table>");
-        salidawebsol.add("</b></td></tr></tbody></table>");
+        salidaweb.add(sb);
+        salidawebsol.add(sb);
 
         ArrayList<Pregunta> preguntas = new ArrayList<>();
 
@@ -277,15 +257,15 @@ public class MoodleTestController {
         try (PrintWriter outweb = new PrintWriter("./upload/test.html");
              PrintWriter outwebsol = new PrintWriter("./upload/testsol.html");
              PrintWriter outgift = new PrintWriter("./upload/test.gift")) {
-            for (Object linea : salidaweb) {
+            salidaweb.forEach((linea) -> {
                 outweb.println(linea);
-            }
-            for (Object linea : salidawebsol) {
+            });
+            salidawebsol.forEach((linea) -> {
                 outwebsol.println(linea);
-            }
-            for (Object linea : salidagift) {
+            });
+            salidagift.forEach((linea) -> {
                 outgift.println(linea);
-            }
+            });
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         }
@@ -420,7 +400,7 @@ public class MoodleTestController {
                 String fileName = ze.getName();
                 File newFile = new File(outputFolder + File.separator + fileName);
 
-                if (fileName.contains(".txt")) {
+                if (fileName.endsWith(".txt")) {
                     testfilename = fileName;
                 }
 
