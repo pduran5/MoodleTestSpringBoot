@@ -1,9 +1,0 @@
-net\pduran\moodletest\storage\StorageService.class
-net\pduran\moodletest\Pregunta.class
-net\pduran\moodletest\storage\StorageProperties.class
-META-INF\spring-configuration-metadata.json
-net\pduran\moodletest\storage\StorageFileNotFoundException.class
-net\pduran\moodletest\MoodleTest.class
-net\pduran\moodletest\controller\MoodleTestController.class
-net\pduran\moodletest\storage\FileSystemStorageService.class
-net\pduran\moodletest\storage\StorageException.class
