@@ -325,8 +325,8 @@ public class MoodleTestController {
 
     private String FormatearRespuesta(int numero, Object line, boolean correcta, String resta) {
         String porcentaje = String.format("%.5f", 100.0 / numero);
-        //porcentaje = porcentaje.replace(',', '.');
-        //porcentaje = porcentaje.replace(".00000", "");
+        porcentaje = porcentaje.replace(',', '.');
+        porcentaje = porcentaje.replace(".00000", "");
         String linea = "    ";
 
         // Respuestas correctas
