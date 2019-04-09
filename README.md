@@ -17,9 +17,7 @@ Conversor de formato propio a Moodle Gift realizado con Spring Boot.
 Al final de cada pregunta se añade una línea que contiene **-----** (también al final del test).
 
 ## Imágenes
-Para incluir una imagen en el enunciado:
-  - Guardar la imagen en una subcarpeta **img**
-  - En el test, la línea comienza por **###** seguido del nombre del fichero de imagen. P.ej. ###imagen.png
+Para incluir una imagen en el enunciado en el test, la línea comienza por **###** seguido del nombre del fichero de imagen. P.ej. ###imagen.png
 
 ## Respuestas
 Las respuestas correctas se marcan al inicio con un **+** y las incorrectas con un **-**
